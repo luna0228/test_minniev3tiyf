@@ -17,16 +17,18 @@
         <a-assets>
             <a-asset-item id="animated-asset" src="assets/asset.gltf"></a-asset-item>
             <a-asset-item id="animated-asset" src="assets/asset02.gltf"></a-asset-item>
+            <video id="penguin-sledding" autoplay loop="true" src="assets/minnie.mp4"></video>
         </a-assets>
 
         <a-marker id="animated-marker" type="pattern" preset="custom" url="assets/minnie.patt"
             raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="markerA">
-            <a-entity id="bowser-model" scale="0.0070263580732053575 0.0070263580732053575 0.0070263580732053575"
+            <a-entity id="bowser-model" scale="0.003 0.003 0.003" position="1 2 3" rotation="0 45 0"
                 animation-mixer="loop: repeat" gltf-model="#animated-asset" class="clickable"
                 gesture-handler></a-entity>
-            <a-entity id="bowser-model02" scale="0.0070263580732053575 0.0070263580732053575 0.0070263580732053575"
-                animation-mixer="loop: repeat" gltf-model="#animated-asset02" class="clickable"
-                gesture-handler></a-entity>
+            <a-entity id="bowser-model02" scale="1 1 1" position="-1 -2 3" animation-mixer="loop: repeat"
+                gltf-model="#animated-asset02" class="clickable" gesture-handler></a-entity>
+            <!-- Using the asset management system. -->
+            <a-video src="#penguin-sledding" width="16" height="9" position="0 0 -20"></a-video>
         </a-marker>
 
         <a-entity camera></a-entity>
